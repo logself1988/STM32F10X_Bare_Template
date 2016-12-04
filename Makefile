@@ -3,6 +3,9 @@ include Makefile.common
 LDFLAGS=$(COMMONFLAGS) -fno-exceptions -ffunction-sections -fdata-sections -L$(LIBDIR) -nostartfiles -Wl,--gc-sections,-Tlinker.ld
 LDLIBS+=-lm
 LDLIBS+=-lstm32
+LDLIBS+=-lc
+LDLIBS+=-lgcc
+LDLIBS+=-lrdimon
 STARTUP=startup.c
 all: libs src
 	$(CC) -o $(PROGRAM).elf $(LDFLAGS) \
